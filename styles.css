@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.logo {
+    height: 3rem;
+}
+
+.nav-link {
+    border-radius: 2rem;
+    color: #000;
+    font-size: 1.2rem;
+    /* height: 100%; */
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.nav-link-website {
+    background-color: #ffc0cb;
+}
+
+.nav-link-login {
+    background-color: #14aa14;
+    color: #fff;
+}
+
+main {
+    background-color: rgb(19, 19, 71);
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+.language-box-wrapper {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.language-box {
+    background-color: #ebeb43;
+    border-radius: 0.3rem;
+    font-size: 1.6rem;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.language-box:nth-child(2n) {
+    background-color: #14aa14;
+}
+
+.hamburger-button {
+    display: none;
+}
+
+.hamburger-button img {
+    width: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .language-box-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hamburger-button {
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        display: flex;
+    }
+  }
