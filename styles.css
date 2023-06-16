@@ -8,6 +8,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+    color: #000;
+    text-decoration: none;
+}
+
 .main-wrapper {
     display: flex;
     flex-direction: column;
@@ -17,21 +22,44 @@ body {
 header {
     align-items: center;
     display: flex;
+    height: 5rem;
     justify-content: space-between;
-    padding: 1rem;
+    position: relative;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .logo {
     height: 3rem;
+    margin-left: 1rem;
+}
+
+.nav-link-wrapper {
+    position: relative;
 }
 
 .nav-link {
+    align-items: center;
     border-radius: 2rem;
     color: #000;
+    display: flex;
     font-size: 1.2rem;
-    /* height: 100%; */
+    gap: 0.5rem;
     padding: 0.5rem 1rem;
-    text-decoration: none;
+    position: relative;
+}
+
+.nav-link-caret {
+    height: 0.5rem;
+}
+
+.nav-link-wrapper:hover .nav-link-dropdown,
+.nav-link-wrapper:focus-within .nav-link-dropdown {
+    display: flex;
 }
 
 .nav-link-website {
@@ -43,8 +71,64 @@ header {
     color: #fff;
 }
 
+.nav-link-dropdown {
+    background-color: #fff;
+    box-shadow: 0 0.1rem 0.2rem #666;
+    display: none;
+    flex-direction: column;
+    padding: 1rem 0;
+    position: absolute;
+    top: 2.2rem;
+}
+
+.nav-link-dropdown a {
+    padding: 0.5rem 1.5rem;
+    white-space: nowrap;
+}
+
+.nav-link-dropdown a:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+.hamburger-button {
+    align-self: stretch;
+    display: none;
+    padding: 0 1rem;
+}
+
+.hamburger-button img {
+    width: 2rem;
+}
+
+.hamburger-button:focus-within .hamburger-menu,
+.hamburger-button:hover .hamburger-menu {
+    display: flex;
+}
+
+.hamburger-menu {
+    background-color: #fff;
+    display: none;
+    flex-direction: column;
+    left: 0;
+    padding: 1rem 0;
+    position: absolute;
+    top: 5rem;
+    width: 100vw;
+}
+
+.hamburger-menu a {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.hamburger-menu a:hover {
+    background-color: #666;
+    color: #fff;
+}
+
 main {
-    background-color: rgb(19, 19, 71);
+    background-color: #131347;
     flex-grow: 1;
     padding: 1rem;
 }
@@ -60,19 +144,11 @@ main {
     border-radius: 0.3rem;
     font-size: 1.6rem;
     padding: 1.5rem 0;
-    text-align: center;
+    text-align: center; 
 }
 
 .language-box:nth-child(2n) {
     background-color: #14aa14;
-}
-
-.hamburger-button {
-    display: none;
-}
-
-.hamburger-button img {
-    width: 2rem;
 }
 
 @media only screen and (max-width: 800px) {
